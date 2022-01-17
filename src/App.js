@@ -2,6 +2,7 @@ import Hello from './components/Hello';
 import './App.css';
 import Counter from './components/Counter';
 import Customer from './components/Customer';
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 
 function App() {
   const customers = [{
@@ -35,13 +36,27 @@ function App() {
       <hr/>
       <Counter/>
       <hr/>
-      {
-        customers.map(customer=>{
-          return(
-            <Customer key={customer.id} id={customer.id} image={customer.image} name={customer.name} birthday={customer.birthday} gender={customer.gender} job={customer.job}/>
-          )
-        })
-      }
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>번호</TableCell>
+            <TableCell>이미지</TableCell>
+            <TableCell>이름</TableCell>
+            <TableCell>생년월일</TableCell>
+            <TableCell>성별</TableCell>
+            <TableCell>직업</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {
+            customers.map(customer=>{
+              return(
+                <Customer key={customer.id} id={customer.id} image={customer.image} name={customer.name} birthday={customer.birthday} gender={customer.gender} job={customer.job}/>
+              )
+            })
+          }
+        </TableBody>
+      </Table>
       
     </div>
   );

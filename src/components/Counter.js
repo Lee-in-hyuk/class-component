@@ -21,7 +21,6 @@ class Counter extends Component {
                 <h1>{counter}</h1>
                 <button onClick={this.handleIncrease}>+{fixed}</button>
                 <button onClick={this.handleDecrease}>-{fixed}</button>
-                <p>이렇게도 쓸 수 있어요{fixed}</p>
             </div>
         )
     }
