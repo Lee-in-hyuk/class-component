@@ -15,11 +15,13 @@ class Counter extends Component {
         }))
     }
     render() {
+        const { counter, fixed } = this.state;
         return(
             <div>
-                <h1>{this.state.counter}</h1>
+                <h1>{counter}</h1>
                 <button onClick={this.handleIncrease}>+1</button>
                 <button onClick={this.handleDecrease}>-1</button>
+                <p>이렇게도 쓸 수 있어요{fixed}</p>
             </div>
         )
     }
